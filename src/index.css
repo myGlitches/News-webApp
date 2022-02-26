@@ -1,13 +1,412 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  border: none;
+}
+
+.container {
+  background-color: #ebf2f7;
+  height: 100vh;
+}
+
+/* Styles for Sidebar */
+
+.sidebarContainer {
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  background-color: #ebf2f7;
+  border-radius: 0 2rem 2rem 0;
+  box-shadow: 5px 5px 30px #aaaaaa;
+  padding: 2rem 3rem 0 2rem;
+}
+
+.sidebarFeedbackContainer {
+  display: flex;
+  min-width: 35rem;
+  justify-content: space-between;
+  position: absolute;
+  height: 120vh;
+  background-color: #ebf2f7;
+  border-radius: 0 2rem 2rem 0;
+  box-shadow: 5px 5px 30px #aaaaaa;
+  padding: 2rem 3rem 0 2rem;
+}
+
+.sidebarDivs {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebarItems {
+  display: flex;
+  width: 12rem;
+  flex-direction: column;
+}
+
+.profileCard {
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  min-width: fit-content;
+  padding: 7%;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 5px 20px #aaaaaa;
+  border-radius: 1rem;
+}
+
+.profilepicContainer {
+  padding-right: 3%;
+}
+
+.profilePic {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+}
+
+.userdetailsContainer {
+  padding: 3%;
+}
+
+.userdetailsTextFont {
+  font-size: x-small;
+}
+
+.toggleTileContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 3.5rem;
+  padding: 5%;
+  background-color: white;
+  box-shadow: 0px 5px 20px #aaaaaa;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.toggleTitle {
+  display: flex;
+  font-weight: bold;
+  font-size: small;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.toggleTransitionContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.toggleTransition {
+  display: flex;
+  width: 85%;
+  height: 90%;
+  min-height: 2rem;
+  box-shadow: 0 0 5px #aaaaaa;
+  background-color: #e2e9f0;
+  cursor: pointer;
+}
+
+.cardToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  background-color: #e2e9f0;
+  font-size: 1.3rem;
+}
+
+.cardToggle:active {
+  opacity: 0.5;
+}
+
+.listToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #98eec8;
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.listToggle:active {
+  opacity: 0.5;
+}
+
+.feedbackcardContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  background-color: white;
+  box-shadow: 0px 5px 20px #aaaaaa;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.feedbackContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedbackTitle {
+  display: flex;
+  font-weight: bold;
+  font-size: small;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.feebdackSubmitContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.feedbackSubmit {
+  display: flex;
+  font-weight: bold;
+  font-size: x-small;
+  border: none;
+  border-radius: 0.5rem;
+  justify-content: center;
+  width: 85%;
+  align-items: center;
+  min-height: 2rem;
+  box-shadow: 0 0 8px #aaaaaa;
+  background-color: #98eec8;
+  cursor: pointer;
+}
+
+.feedbackSubmit:hover {
+  background-color: #2da17a;
+}
+
+.feedbackSubmitChange {
+  display: flex;
+  font-weight: bold;
+  font-size: x-small;
+  border: none;
+  border-radius: 0.5rem;
+  justify-content: center;
+  width: 85%;
+  align-items: center;
+  min-height: 2rem;
+  box-shadow: 0 0 8px #aaaaaa;
+  background-color: #f0a7a9;
+  cursor: pointer;
+}
+
+.feedbackSubmit:active {
+  opacity: 0.6;
+}
+
+.colorChanger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #98eec8;
+  width: 50%;
+  font-size: 1.8rem;
+}
+
+.colorChanger2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e2e9f0;
+  width: 50%;
+}
+
+/* News Component */
+
+.newsContainer {
+  margin-left: 25%;
+}
+
+.cardandDeleteContainer {
+  display: flex;
+}
+
+.cardListContainer {
+  display: flex;
+  margin-top: 3%;
+  width: 90%;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0px 5px 20px #aaaaaa;
+  overflow: hidden;
+}
+
+.newsPhotoContainer {
+  padding: 3%;
+  display: flex;
+  align-items: center;
+}
+
+.newsPhoto {
+  margin-left: 25%;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+}
+
+.newsContent {
+  margin: 0 0 0 2%;
+  padding: 3%;
+  width: 100%;
+}
+
+.newscardText {
+  font-size: smaller;
+}
+
+.date {
+  margin-top: 2%;
+}
+
+.moreDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.readMore {
+  margin: 2% 4% 0 0;
+  background-color: white;
+  box-shadow: 0 0 5px #aaa;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.5%;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.readMore:hover {
+  background-color: #6c757d;
+  cursor: pointer;
+}
+
+.deleteIcon {
+  margin: 2% 7% 0 0;
+  border: none;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteIcon:hover {
+  opacity: 0.5;
+}
+
+.feedbackContainer {
+  margin-left: 10%;
+}
+
+.feedbackTitle {
+  font-weight: bold;
+}
+
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedbackformContainer {
+  margin-top: 1rem;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formElements {
+  margin-bottom: 5%;
+}
+
+.formelementTitle {
+  font-size: small;
+  padding: 1% 0;
+}
+
+input {
+  border: none;
+  padding: 2% 3%;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 5px #aaa;
+}
+
+.addressinputField {
+  height: 6rem;
+  width: 18rem;
+}
+
+.submitFormButton {
+  display: flex;
+  padding: 3%;
+  background-color: #5cc8a1;
+  color: white;
+  text-shadow: 0 0 5px #aaa;
+  justify-content: center;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px #aaa;
+  width: 50%;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.submitFormButton:hover {
+  background-color: #6c757d;
+}
+
+/* Card News CSS */
+
+.cardNewsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  min-height: 300px;
+  width: 75%;
+  margin-top: 10%;
+  background-color: white;
+  box-shadow: 0 0 5px #6c757d;
+  border-radius: 20px;
+}
+
+.cardNewsPhotoContainer {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.cardNewsPhoto {
+  height: 4rem;
+  width: 8rem;
+}
+
+.allnewsCardsDiv {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.flexTry {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexTry2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

@@ -9,7 +9,7 @@ function Content() {
   return (
     <>
       <div className="newsContainer">
-        {color === "colorChanger" ? <CardList /> : <NewsCards />}
+        {color === "colorChanger" ? <NewsCards /> : <CardList />}
       </div>
     </>
   )

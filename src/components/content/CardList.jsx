@@ -20,7 +20,7 @@ function CardList() {
   }
 
   return (
-    <div className="flexTry">
+    <div className="newsListLayout">
       {post.map((post) => (
         <div key={post.id} className="cardandDeleteContainer">
           <HorizontalNews key={post.id} post={post} />

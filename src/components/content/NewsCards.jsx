@@ -20,7 +20,7 @@ function NewsCards() {
   }
 
   return (
-    <div className="flexTry2">
+    <div className="newsCardLayout">
       {post.map((post) => (
         <div className="allnewsCardsDiv" key={post.id}>
           <CardNews key={post.id} post={post} />
